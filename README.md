@@ -17,6 +17,21 @@ An AI assistant with powerful Optical Character Recognition (OCR) capabilities p
 npm install
 ```
 
+## Quick Demo
+
+Run the interactive demo to see OCR capabilities without needing images:
+
+```bash
+npm run demo
+```
+
+This will show:
+- Supported languages
+- Page segmentation modes
+- Configuration validation
+- Text cleaning utilities
+- Available API exports
+
 ## Quick Start
 
 ```javascript

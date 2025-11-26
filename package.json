@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/ocrTests.js",
+    "demo": "node demo.js",
     "example": "node examples/basicUsage.js"
   },
   "keywords": [
