@@ -283,7 +283,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 New to programming and want to learn more? Check out these free resources:
 
 - **Git and GitHub**:
-  - [GitHub Skills](https://skills.github.com/) - Interactive tutorials from GitHub
+  - [GitHub Skills](https://skills.github.com/) - Step-by-step interactive courses to learn Git and GitHub
   - [GitHub's Git Handbook](https://guides.github.com/introduction/git-handbook/)
   
 - **Command Line Basics**:
@@ -296,5 +296,3 @@ New to programming and want to learn more? Check out these free resources:
 ---
 
 **Made with ❤️ by the Gemini project contributors**
-
-*Last updated: November 2025*
