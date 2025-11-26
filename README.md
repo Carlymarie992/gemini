@@ -188,6 +188,7 @@ To understand the full scope of this AI's training:
 This repository includes guidance for automated coding agents and contributors: see `.github/copilot-coding-agent.md` for repository-specific instructions and expectations when using automated tools (planning, preambles, tests, and safe handling of sensitive data).
 
 ## Important Note
+
 **This AI is trained to prioritize safety, believe patterns of abuse, and take allegations seriously.**
 
 It is intentionally designed to:
