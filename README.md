@@ -165,5 +165,5 @@ Remember: Your voice matters. Your experience is valid. Stay strong, stay organi
 
 ## License
 
-ISC License - See LICENSE file for details
+MIT License - See LICENSE file for details
 

@@ -44,10 +44,7 @@ function saveCaseData(data) {
 // Ensure clean test environment
 function cleanupTestData() {
   if (fs.existsSync(TEST_DATA_DIR)) {
-    if (fs.existsSync(TEST_CASE_FILE)) {
-      fs.unlinkSync(TEST_CASE_FILE);
-    }
-    fs.rmdirSync(TEST_DATA_DIR);
+    fs.rmSync(TEST_DATA_DIR, { recursive: true, force: true });
   }
 }
 

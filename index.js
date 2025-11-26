@@ -66,7 +66,7 @@ function clearScreen() {
 
 // Generate timestamp for filenames
 function generateTimestamp() {
-  return new Date().toISOString().replace(/:/g, '-').split('.')[0];
+  return new Date().toISOString().replace(/[:.]/g, '-').replace('T', '-').split('Z')[0];
 }
 
 // Display main menu
