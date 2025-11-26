@@ -1,0 +1,8 @@
+{
+  "name": "Copy of North Dakota Legal Assistant",
+  "description": "An AI-powered legal assistant specializing in North Dakota civil litigation, leveraging Gemini to analyze evidence, draft legal documents, and articulate compelling narratives based on North Dakota law and the Family Law Evidence Organization Guide.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
