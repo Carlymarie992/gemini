@@ -1,0 +1,26 @@
+{
+  "name": "gemini",
+  "version": "1.0.0",
+  "description": "District Court Case Management Assistant - Helping you navigate your case against abuse and DARVO tactics",
+  "main": "index.js",
+  "bin": {
+    "gemini": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "case-management",
+    "court",
+    "legal",
+    "darvo",
+    "abuse",
+    "assistant"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
