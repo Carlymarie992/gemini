@@ -4,13 +4,13 @@
 Provide explicit, repository-specific instructions for GitHub Copilot coding agents and other automated coding assistants working in this repository.
 
 ## Core expectations
-- Use the repository `manage_todo_list` workflow to plan and track multi-step changes.
+- For multi-step changes, create and maintain a concise todo list (in markdown or plain text) to plan and track progress.
 - Make minimal, focused edits that preserve repo style and public APIs.
 - Run existing tests and linters locally before proposing broader changes; surface failures when they cannot be fixed safely.
 - Do not introduce secrets, credentials, or sensitive data into the repository. If work requires secrets, explain what needs to be set and where (CI secrets, local env vars), and do not add them to files.
 
 ## Agent behavior and interaction
-- Start every multi-step task by creating a concise todo list via the `manage_todo_list` tool and mark one task `in-progress` before editing files.
+- Start every multi-step task by creating a concise todo list (in markdown or plain text) and mark one task `in-progress` before editing files.
 - Provide short preambles (1–2 sentences) before performing file edits or running significant tooling.
 - After edits, run tests where possible and update the todo list to mark items completed. Provide concise progress updates when many changes occur.
 
@@ -20,7 +20,7 @@ Provide explicit, repository-specific instructions for GitHub Copilot coding age
 - Use clear, descriptive commit messages and PR descriptions. If opening a PR, include the todo list items and short rationale.
 
 ## Testing and validation
-- If tests exist in the repo, run the tests relevant to your changes and report results. If tests fail for unrelated reasons, note them and ask the human maintainer before attempting broad fixes.
+- If (and only if) this repository contains code and tests, run the tests relevant to your changes and report results. If tests fail for unrelated reasons, note them and ask the human maintainer before attempting broad fixes.
 - For new runnable code, include a minimal README and a short example showing how to run it locally.
 
 ## Security and safety
