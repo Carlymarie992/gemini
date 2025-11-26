@@ -7,7 +7,7 @@
 > Powerful Optical Character Recognition (OCR) tools for extracting text from images and PDFs, powered by Tesseract.js
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D%2014.0.0-brightgreen.svg)](https://nodejs.org/)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen.svg)](https://nodejs.org/)
 
 ## 📋 Table of Contents
 
@@ -44,7 +44,7 @@ Perfect for:
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [Node.js](https://nodejs.org/) (version 18 or higher)
 - npm (comes with Node.js)
 
 ### Installation
