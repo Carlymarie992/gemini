@@ -1,0 +1,28 @@
+{
+  "name": "gemini",
+  "version": "1.0.0",
+  "description": "AI assistant with advanced OCR capabilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/ocrTests.js",
+    "example": "node examples/basicUsage.js"
+  },
+  "keywords": [
+    "ocr",
+    "optical-character-recognition",
+    "tesseract",
+    "image-to-text",
+    "text-extraction",
+    "ai",
+    "assistant",
+    "multi-language"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tesseract.js": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
