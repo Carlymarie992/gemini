@@ -51,4 +51,4 @@ Contact and escalation
 - For urgent security concerns, open an issue and request immediate attention from repository maintainers.
 
 Notes for maintainers
-- This file documents the recommended workflow for Copilot coding agents and other automated tools. Maintainers may adapt or expand these instructions to fit organizational practices.
+This file documents the recommended workflow for Copilot coding agents and other automated tools. Maintainers may adapt or expand these instructions to fit organizational practices.
