@@ -236,7 +236,7 @@ class DocumentOrganizer {
    * Generate organization report in plain English
    */
   async generateReport() {
-    const stats = await getStatistics();
+    const stats = await this.getStatistics();
     
     let report = '📂 Document Organization Report\n';
     report += '═══════════════════════════════════════════\n\n';
