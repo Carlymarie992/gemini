@@ -51,8 +51,8 @@ This repository contains an AI assistant trained to understand and articulate co
 
 ### Input Validation and Security
 - **ALWAYS** validate user input for security vulnerabilities
-- Sanitize inputs to prevent injection attacks
-- Use established sanitization utilities (e.g., `html_escape` for XSS prevention)
+- Sanitize inputs to prevent injection attacks (e.g., XSS, SQL injection)
+- Use established sanitization utilities appropriate for your context
 - Be especially vigilant with file operations and external data
 - Validate conflicting options and throw descriptive errors
 
@@ -164,7 +164,7 @@ Understanding that trauma affects victim presentation, memory, articulation, and
 4. **Review license** - Is it compatible with this project?
 5. **Document purpose** - Explain why this dependency was added
 
-### Planned capabilities:
+### Planned Capabilities:
 - OCR functionality for document processing (when implemented)
 - Modular architecture supporting evidence analysis, timeline generation, and document organization
 
