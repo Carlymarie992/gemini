@@ -2,9 +2,7 @@
 
 ## Supported Versions
 
-We are committed to providing security updates for our supported versions. The following table outlines which versions of the project are currently receiving security updates.
-
-| Version | Supported          |
+We provide security updates for all currently supported versions as listed in the table below.
 | ------- | ------------------ |
 | 1.x     | :white_check_mark: |
 
