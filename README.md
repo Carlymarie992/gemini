@@ -173,8 +173,10 @@ This downloads any new updates to your computer.
 **Problem**: You see a message about permissions or access denied.
 
 **Solution**:
+- Make sure you're trying to clone/save to a location where you have write permissions (like your Desktop or Documents folder)
+- Try using a different location, like your home directory
 - **Windows**: Try running Command Prompt as Administrator (right-click and select "Run as administrator")
-- **Mac/Linux**: Add `sudo` before the command, like: `sudo git clone ...`
+- **Mac/Linux**: Make sure you're not trying to save to a system directory. Use your home directory instead: `cd ~` then try again
 
 ### "Repository not found" error
 
@@ -271,8 +273,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 New to programming and want to learn more? Check out these free resources:
 
 - **Git and GitHub**:
+  - [GitHub Skills](https://skills.github.com/) - Interactive tutorials from GitHub
   - [GitHub's Git Handbook](https://guides.github.com/introduction/git-handbook/)
-  - [Try Git (Interactive Tutorial)](https://try.github.io/)
   
 - **Command Line Basics**:
   - [Command Line Crash Course](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line)
