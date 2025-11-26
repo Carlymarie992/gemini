@@ -43,9 +43,8 @@ This repository contains an AI assistant trained to understand and articulate co
 - Prioritize readability over cleverness
 
 ### Testing
-- Build: `npm install` (if package.json exists)
-- Test: `npm test` (runs test/run-tests.js with custom assertions)
-- Demo: `npm run demo` (if available)
+- When code is added, establish appropriate testing infrastructure
+- Build and test commands should be documented in package.json scripts when applicable
 - **ALWAYS** run tests before committing changes
 - Add tests for new features consistent with existing test patterns
 - Ensure changes don't break existing functionality
@@ -139,7 +138,7 @@ Understanding that trauma affects victim presentation, memory, articulation, and
 
 ## Privacy and Data Protection
 
-- **Case data is stored in `.case-data/` directory** (gitignored for privacy)
+- **If case data storage is implemented, ensure sensitive directories are gitignored for privacy**
 - **NEVER commit sensitive personal information** to the repository
 - **NEVER include real names, identifying details, or case specifics** in documentation or examples
 - Use anonymized, composite examples only
@@ -165,21 +164,23 @@ Understanding that trauma affects victim presentation, memory, articulation, and
 4. **Review license** - Is it compatible with this project?
 5. **Document purpose** - Explain why this dependency was added
 
-### Current key dependencies:
-- Tesseract.js for OCR capabilities (13+ language support)
-- Standard Node.js ecosystem tools for testing and building
+### Planned capabilities:
+- OCR functionality for document processing (when implemented)
+- Modular architecture supporting evidence analysis, timeline generation, and document organization
 
 ## Commands Reference
 
+When code implementation begins, document build, test, and run commands here. Typical commands might include:
+
 ```bash
-# Install dependencies
+# Install dependencies (when package.json exists)
 npm install
 
-# Run tests
+# Run tests (when test suite exists)
 npm test
 
-# Run demo (if available)
-npm run demo
+# Run demo or start application
+npm run demo  # or npm start
 
 # Build (if applicable)
 npm run build
