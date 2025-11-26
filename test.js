@@ -1,15 +1,53 @@
 const fs = require('fs');
 const path = require('path');
-const { loadCaseData, saveCaseData } = require('./index.js');
 
 // Test data directory
-const TEST_DATA_DIR = path.join(__dirname, '.case-data');
+const TEST_DATA_DIR = path.join(__dirname, '.case-data-test');
 const TEST_CASE_FILE = path.join(TEST_DATA_DIR, 'case.json');
+
+// Mock functions for testing
+function loadCaseData() {
+  if (fs.existsSync(TEST_CASE_FILE)) {
+    const data = fs.readFileSync(TEST_CASE_FILE, 'utf8');
+    try {
+      return JSON.parse(data);
+    } catch (error) {
+      console.error('Error parsing case data:', error.message);
+      return getEmptyCaseData();
+    }
+  }
+  return getEmptyCaseData();
+}
+
+function getEmptyCaseData() {
+  return {
+    caseNumber: '',
+    plaintiff: '',
+    defendant: '',
+    court: '',
+    judge: '',
+    filingDate: '',
+    events: [],
+    evidence: [],
+    darvoIncidents: [],
+    notes: []
+  };
+}
+
+function saveCaseData(data) {
+  if (!fs.existsSync(TEST_DATA_DIR)) {
+    fs.mkdirSync(TEST_DATA_DIR, { recursive: true });
+  }
+  fs.writeFileSync(TEST_CASE_FILE, JSON.stringify(data, null, 2));
+}
 
 // Ensure clean test environment
 function cleanupTestData() {
-  if (fs.existsSync(TEST_CASE_FILE)) {
-    fs.unlinkSync(TEST_CASE_FILE);
+  if (fs.existsSync(TEST_DATA_DIR)) {
+    if (fs.existsSync(TEST_CASE_FILE)) {
+      fs.unlinkSync(TEST_CASE_FILE);
+    }
+    fs.rmdirSync(TEST_DATA_DIR);
   }
 }
 

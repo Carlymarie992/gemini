@@ -16,9 +16,19 @@ if (!fs.existsSync(DATA_DIR)) {
 // Load case data
 function loadCaseData() {
   if (fs.existsSync(CASE_FILE)) {
-    const data = fs.readFileSync(CASE_FILE, 'utf8');
-    return JSON.parse(data);
+    try {
+      const data = fs.readFileSync(CASE_FILE, 'utf8');
+      return JSON.parse(data);
+    } catch (error) {
+      console.error('Error loading case data:', error.message);
+      console.error('Case data may be corrupted. Starting with empty data.');
+      return getEmptyCaseData();
+    }
   }
+  return getEmptyCaseData();
+}
+
+function getEmptyCaseData() {
   return {
     caseNumber: '',
     plaintiff: '',
@@ -52,6 +62,11 @@ function question(query) {
 // Clear screen
 function clearScreen() {
   console.clear();
+}
+
+// Generate timestamp for filenames
+function generateTimestamp() {
+  return new Date().toISOString().replace(/:/g, '-').split('.')[0];
 }
 
 // Display main menu
@@ -365,7 +380,7 @@ async function courtPreparationChecklist() {
 
 // Export case summary
 function exportCaseSummary(caseData) {
-  const timestamp = new Date().toISOString().replace(/:/g, '-').split('.')[0];
+  const timestamp = generateTimestamp();
   const filename = path.join(DATA_DIR, `case-summary-${timestamp}.txt`);
   
   let summary = '═══════════════════════════════════════════════════════\n';
