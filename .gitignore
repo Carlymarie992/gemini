@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -27,3 +32,10 @@ dist-ssr
 ocr-output/
 *.ocr.txt
 *.ocr.json
+
+# Build artifacts
+*.zip
+metadata.json
+
+# Tesseract data (downloaded at runtime)
+*.traineddata

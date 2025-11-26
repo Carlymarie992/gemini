@@ -1,15 +1,39 @@
 {
-  "name": "copy-of-north-dakota-legal-assistant",
-  "private": true,
-  "version": "0.0.0",
+  "name": "gemini-ocr-tools",
+  "version": "1.0.0",
+  "description": "Powerful OCR tools for extracting text from images and PDFs using Tesseract.js",
+  "keywords": [
+    "ocr",
+    "tesseract",
+    "text-extraction",
+    "image-to-text",
+    "pdf-ocr",
+    "cli",
+    "batch-processing",
+    "multi-language"
+  ],
+  "author": "Carly Cheney",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Carlymarie992/gemini.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Carlymarie992/gemini/issues"
+  },
+  "homepage": "https://github.com/Carlymarie992/gemini#readme",
   "type": "module",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "dev": "ng serve",
     "build": "ng build",
     "preview": "ng serve --configuration=production",
     "ocr:test": "node scripts/ocr-test.js",
     "ocr:extract": "node scripts/ocr-extract.js",
-    "ocr:batch": "node scripts/ocr-batch.js"
+    "ocr:batch": "node scripts/ocr-batch.js",
+    "ocr:cli": "node scripts/ocr-cli.js"
   },
   "dependencies": {
     "@angular/build": "^20.3.0",
