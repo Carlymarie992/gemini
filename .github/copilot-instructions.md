@@ -15,14 +15,12 @@ This is an AI assistant project named "gemini". The project is designed to be ac
 - Handle errors gracefully and provide helpful error messages
 
 ### Data Storage
-- Case data is stored in the `.case-data` directory
-- This directory is gitignored for privacy reasons
 - Ensure sensitive data is never committed to the repository
+- Add appropriate .gitignore entries for any data directories
 
 ### Testing
-- Run tests using `npm test`
-- Write tests for new functionality
-- Ensure existing tests pass before committing changes
+- Write tests for new functionality when applicable
+- Ensure all tests pass before committing changes
 
 ### File Organization
 - Keep the project structure simple and organized
@@ -38,7 +36,7 @@ This is an AI assistant project named "gemini". The project is designed to be ac
 
 ## Development Workflow
 1. Test changes locally before committing
-2. Run the test suite with `npm test`
+2. Run any available test suite
 3. Update documentation when adding new features
 4. Follow the existing code style and patterns
 
