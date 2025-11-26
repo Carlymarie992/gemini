@@ -174,6 +174,11 @@ function groupWordsIntoLines(words, threshold = 10) {
 function cleanText(text, options = {}) {
   let cleaned = text;
 
+  // Validate conflicting options
+  if (options.toLowerCase && options.toUpperCase) {
+    throw new Error('Cannot use both toLowerCase and toUpperCase options simultaneously');
+  }
+
   // Remove extra whitespace
   if (options.removeExtraWhitespace !== false) {
     cleaned = cleaned.replace(/\s+/g, ' ').trim();

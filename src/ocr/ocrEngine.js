@@ -75,6 +75,12 @@ class OCREngine {
       tessedit_char_blacklist = null
     } = options;
 
+    // Set language if different from current
+    if (language !== this.defaultLanguage) {
+      await this.worker.loadLanguage(language);
+      await this.worker.initialize(language);
+    }
+
     // Configure worker parameters
     const params = {
       tessedit_pageseg_mode: tessedit_pageseg_mode.toString()

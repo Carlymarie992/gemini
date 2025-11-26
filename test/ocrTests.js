@@ -164,6 +164,28 @@ function testInvalidPageSegMode() {
   }
 }
 
+// Test 9: Clean Text Validation
+function testCleanTextValidation() {
+  console.log('\n=== Test 9: Clean Text Validation ===');
+  
+  const { utils } = require('../index');
+  
+  try {
+    // This should throw an error
+    utils.cleanText('Test', { toLowerCase: true, toUpperCase: true });
+    console.error('✗ Should have thrown error for conflicting options');
+    return false;
+  } catch (error) {
+    if (error.message.includes('Cannot use both')) {
+      console.log('✓ Conflicting text case options correctly rejected');
+      return true;
+    } else {
+      console.error('✗ Wrong error thrown:', error.message);
+      return false;
+    }
+  }
+}
+
 // Run all tests
 async function runTests() {
   console.log('==========================================');
@@ -180,6 +202,7 @@ async function runTests() {
   results.push(testPageSegmentationModes());
   results.push(await testEngineInstance());
   results.push(testInvalidPageSegMode());
+  results.push(testCleanTextValidation());
   
   const passed = results.filter(r => r === true).length;
   const total = results.length;
