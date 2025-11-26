@@ -152,6 +152,15 @@ Plus pattern recognition guide with:
 - Red flags for danger
 - Comparison tables and checklists
 
+#### 9. [Quick Reference](quick_reference.md)
+A quick reference guide providing:
+- Core definitions in concise format
+- Pattern recognition checklists
+- Quick articulation frameworks
+- Common judicial misconceptions with responses
+- Red flags for immediate danger
+- Evidence organization templates
+- Key phrases for court
 ## How to Use This Knowledge Base
 
 ### For AI Training
@@ -272,13 +281,18 @@ This knowledge base:
 ## Safety First
 
 If you or someone you know is experiencing abuse:
-- **National Domestic Violence Hotline**: 1-800-799-7233
-- **National Child Abuse Hotline**: 1-800-422-4453
-- **Local domestic violence organizations** can provide specialized support
-- **Safety planning** is essential before and after leaving
-- **Document everything** safely (out of abuser's reach)
 
-**The most dangerous time is when leaving or after leaving—professional support is critical.**
+**National Resources (United States):**
+- **National Domestic Violence Hotline**: 1-800-799-7233 (SAFE) or text "START" to 88788
+- **National Child Abuse Hotline**: 1-800-422-4453 (4-A-CHILD)
+- **National Sexual Assault Hotline**: 1-800-656-4673 (HOPE)
+
+**Critical Safety Information:**
+- The most dangerous time is when leaving or after leaving a relationship
+- Safety planning is essential before and during separation
+- Document everything safely (where abuser cannot access)
+- Seek support from domestic violence organizations
+- Consider the timing and manner of legal actions carefully
 
 ## Cultural Competence and Inclusivity
 

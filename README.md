@@ -57,6 +57,7 @@ Comprehensive training materials are located in the `/knowledge_base` directory:
 - **[System Instructions](system_instructions.md)** - Comprehensive AI training instructions
 - **[Example Scenarios](knowledge_base/example_scenarios.md)** - Four detailed scenarios with pattern analysis
 - **[Knowledge Base README](knowledge_base/README.md)** - Complete guide to all materials
+- **[Quick Reference Guide](knowledge_base/quick_reference.md)** - Concise reference with checklists, frameworks, and key concepts
 
 ## Core Principles
 
