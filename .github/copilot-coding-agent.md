@@ -26,7 +26,8 @@ Testing and validation
 Security and safety
 - Never store or print secrets. Redact sensitive outputs from logs before adding them to commits or messages.
 - If a change might affect data privacy, document the risk and required mitigations in the PR description.
-- For any request that is harmful, illegal, or disallowed, respond with: "Sorry, I can't assist with that." and do not produce further content.
+- For any request that is harmful, illegal, or disallowed, respond with the following message and do not produce further content:
+  > Sorry, I can't assist with that.
 
 Pull requests and review
 - Provide a short summary of what changed, why, and how to test it.
