@@ -42,7 +42,10 @@ Alternatively, you can email the maintainer directly. Please include:
 When using this project:
 
 1. **Environment Variables**: Never commit API keys or sensitive data to version control
-2. **Dependencies**: Keep your dependencies up to date using `npm update`
+2. **Dependencies**: Keep your dependencies up to date:
+   - Run `npm update` to update to latest compatible versions
+   - Run `npm audit` to check for known security vulnerabilities
+   - Run `npm audit fix` to automatically fix issues when possible
 3. **Input Validation**: Be cautious when processing untrusted images or PDFs
 4. **File Permissions**: Ensure output directories have appropriate permissions
 5. **.env Files**: Always use `.env.local` or `.env` (gitignored) for sensitive configuration
