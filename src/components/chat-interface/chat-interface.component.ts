@@ -17,6 +17,12 @@ interface ChatMessage {
     <div class="bg-white p-6 rounded-lg shadow-md mb-6 w-full lg:w-1/2">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">AI Chat Assistant</h2>
 
+      <!-- Disclaimer Banner -->
+      <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4" role="alert">
+        <p class="font-bold">Not Legal Advice</p>
+        <p>This tool is for informational purposes only. Always consult a licensed attorney for legal matters.</p>
+      </div>
+
       <div class="flex items-center space-x-4 mb-4">
         <label class="flex items-center">
           <input
