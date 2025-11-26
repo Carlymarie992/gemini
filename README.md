@@ -48,10 +48,20 @@ Git helps you download and manage code from the internet.
   3. If Git isn't installed, your Mac will prompt you to install it
   
 - **Linux**: 
-  ```bash
-  sudo apt-get update
-  sudo apt-get install git
-  ```
+  - **Debian/Ubuntu**:
+    ```bash
+    sudo apt-get update
+    sudo apt-get install git
+    ```
+  - **Fedora/RHEL/CentOS**:
+    ```bash
+    sudo dnf install git
+    ```
+  - **Arch Linux**:
+    ```bash
+    sudo pacman -S git
+    ```
+  - **Other distributions**: Use your distribution's package manager to install git
 
 #### 2. **GitHub Account** (Free)
 GitHub is where code projects are stored online.
