@@ -183,13 +183,11 @@ To understand the full scope of this AI's training:
 3. Explore individual topic documents in the `knowledge_base/` directory
 4. Study the [Example Scenarios](knowledge_base/example_scenarios.md) to see patterns in action
 
-## Important Note
-
 ## Copilot Coding Agent
 
 This repository includes guidance for automated coding agents and contributors: see `.github/copilot-coding-agent.md` for repository-specific instructions and expectations when using automated tools (planning, preambles, tests, and safe handling of sensitive data).
 
-
+## Important Note
 **This AI is trained to prioritize safety, believe patterns of abuse, and take allegations seriously.**
 
 It is intentionally designed to:
