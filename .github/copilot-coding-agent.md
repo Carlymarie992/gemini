@@ -1,7 +1,7 @@
 # Copilot Coding Agent — Repository Instructions
 
 Purpose
-- Provide explicit, repository-specific instructions for GitHub Copilot coding agents and other automated coding assistants working in this repository.
+Provide explicit, repository-specific instructions for GitHub Copilot coding agents and other automated coding assistants working in this repository.
 
 Core expectations
 - Use the repository `manage_todo_list` workflow to plan and track multi-step changes.
