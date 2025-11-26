@@ -48,7 +48,7 @@ Comprehensive training materials are located in the `/knowledge_base` directory:
 ### Core Training Documents
 1. **[Economic Abuse](knowledge_base/economic_abuse.md)** - Financial control as coercive control
 2. **[Stalking and Harassment](knowledge_base/stalking_harassment.md)** - Patterns of surveillance and unwanted contact
-3. **[DARVO](knowledge_base/darvo.md)** - Deny, Attack, Reverse Victim and Offender
+3. **[DARVO](knowledge_base/darvo.md)** - Deny, Attack, and Reverse Victim and Offender
 4. **[Coercive Control](knowledge_base/coercive_control.md)** - Systematic domination and entrapment
 5. **[Legal Abuse and Concealment](knowledge_base/legal_abuse_concealment.md)** - Weaponizing courts and hiding abuse
 6. **[Communicating to Judges](knowledge_base/communicating_to_judges.md)** - Frameworks for articulating complex dynamics
