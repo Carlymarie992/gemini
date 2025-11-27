@@ -2,43 +2,38 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Gemini OCR Tools
+# Gemini - Legal AI Assistant & OCR Tools
 
-> Powerful Optical Character Recognition (OCR) tools for extracting text from images and PDFs, powered by Tesseract.js
+> A comprehensive platform combining AI-powered legal assistance, domestic abuse education, and OCR tools
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen.svg)](https://nodejs.org/)
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
+- [Repository Sections](#repository-sections)
 - [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Documentation](#documentation)
+- [Section 1: OCR Tools](#section-1-ocr-tools)
+- [Section 2: Knowledge Base](#section-2-knowledge-base)
+- [Section 3: Angular Web Application](#section-3-angular-web-application)
+- [Section 4: AI System Instructions](#section-4-ai-system-instructions)
 - [Contributing](#contributing)
 - [License](#license)
 
-## 🎯 Overview
+---
 
-This repository provides a comprehensive set of command-line tools for Optical Character Recognition (OCR), making it easy to extract text from images and PDFs directly from your terminal. Built with Tesseract.js, these tools support multiple languages and offer both single-file and batch processing capabilities.
+## 📂 Repository Sections
 
-Perfect for:
-- 📄 Digitizing scanned documents
-- 🔍 Making images searchable
-- 📚 Batch processing document archives
-- 🌍 Multi-language document processing
-- 🔧 Integration into automated workflows
+This repository is organized into **four main sections**, all under the same branch:
 
-## ✨ Features
+| Section | Directory | Description |
+|---------|-----------|-------------|
+| 🔍 **OCR Tools** | `scripts/`, `docs/ocr/` | Command-line OCR utilities for text extraction |
+| 📚 **Knowledge Base** | `knowledge_base/` | Educational resources on domestic abuse dynamics |
+| 🌐 **Web Application** | `src/` | Angular-based legal assistance web app |
+| 🤖 **AI Instructions** | `system_instructions.md` | AI system configuration and training |
 
-- **Multi-format Support**: PNG, JPG, JPEG, BMP, TIFF, PDF
-- **Multi-language**: 13+ languages including English, Spanish, French, German, and more
-- **Batch Processing**: Process entire directories of images at once
-- **JSON Output**: Structured data output for programmatic use
-- **Confidence Scoring**: Get accuracy metrics for extracted text
-- **Interactive CLI**: User-friendly menu interface
-- **Customizable**: Language selection, output formats, and more
+---
 
 ## 🚀 Quick Start
 
@@ -49,65 +44,35 @@ Perfect for:
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Carlymarie992/gemini.git
-   cd gemini
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Test your setup**
-   ```bash
-   node scripts/ocr-test.js
-   ```
-
-You should see:
-```
-✅ OCR Environment is working correctly!
+```bash
+git clone https://github.com/Carlymarie992/gemini.git
+cd gemini
+npm install
 ```
 
-## 💻 Usage
+---
 
-### Extract Text from a Single Image
+# Section 1: OCR Tools
+
+> 🔍 Powerful Optical Character Recognition tools powered by Tesseract.js
+
+### Overview
+
+Command-line tools for extracting text from images and PDFs. Supports multiple languages and batch processing.
+
+### Quick Usage
 
 ```bash
+# Test OCR setup
+node scripts/ocr-test.js
+
+# Extract text from an image
 node scripts/ocr-extract.js document.png
-```
 
-### Save to a File
-
-```bash
-node scripts/ocr-extract.js document.png --output text.txt
-```
-
-### Process Multiple Images (Batch)
-
-```bash
+# Batch process multiple files
 node scripts/ocr-batch.js ./images ./output
-```
 
-### Use Different Languages
-
-```bash
-# Spanish
-node scripts/ocr-extract.js documento.jpg --lang spa
-
-# French
-node scripts/ocr-extract.js document.jpg --lang fra
-
-# German
-node scripts/ocr-extract.js dokument.jpg --lang deu
-```
-
-### Interactive Menu
-
-For an easy-to-use interface:
-
-```bash
+# Interactive CLI menu
 node scripts/ocr-cli.js
 ```
 
@@ -119,60 +84,133 @@ npm run ocr:extract        # Extract text from a file
 npm run ocr:batch          # Batch process multiple files
 ```
 
-## 📖 Documentation
+### Features
 
-Comprehensive documentation is available:
+- **Multi-format Support**: PNG, JPG, JPEG, BMP, TIFF, PDF
+- **Multi-language**: 13+ languages including English, Spanish, French, German
+- **Batch Processing**: Process entire directories at once
+- **JSON Output**: Structured data output for programmatic use
+- **Confidence Scoring**: Accuracy metrics for extracted text
 
-- **[START-HERE.md](START-HERE.md)** - New user onboarding guide
-- **[OCR-EXAMPLES.md](OCR-EXAMPLES.md)** - Real-world command examples
-- **[OCR-SETUP.md](OCR-SETUP.md)** - Detailed setup instructions
-- **[OCR-QUICKSTART.md](OCR-QUICKSTART.md)** - Quick reference card
-- **[OCR-TROUBLESHOOTING.md](OCR-TROUBLESHOOTING.md)** - Common issues and solutions
+### Supported Languages
 
-## 🌍 Supported Languages
+| Language | Code | Language | Code |
+|----------|------|----------|------|
+| English | eng | Portuguese | por |
+| Spanish | spa | Russian | rus |
+| French | fra | Arabic | ara |
+| German | deu | Chinese | chi_sim |
+| Italian | ita | Japanese | jpn |
 
-- English (eng) - Default
-- Spanish (spa)
-- French (fra)
-- German (deu)
-- Italian (ita)
-- Portuguese (por)
-- Russian (rus)
-- Arabic (ara)
-- Chinese Simplified (chi_sim)
-- Japanese (jpn)
-- Korean (kor)
-- And more!
+### OCR Documentation
 
-## 🛠️ Advanced Usage
+📖 Detailed documentation available in `docs/ocr/`:
 
-### JSON Output
+- **[START-HERE.md](docs/ocr/START-HERE.md)** - New user onboarding guide
+- **[OCR-EXAMPLES.md](docs/ocr/OCR-EXAMPLES.md)** - Real-world command examples
+- **[OCR-SETUP.md](docs/ocr/OCR-SETUP.md)** - Detailed setup instructions
+- **[OCR-QUICKSTART.md](docs/ocr/OCR-QUICKSTART.md)** - Quick reference card
+- **[OCR-TROUBLESHOOTING.md](docs/ocr/OCR-TROUBLESHOOTING.md)** - Common issues and solutions
 
-Get structured data with statistics:
+---
 
-```bash
-node scripts/ocr-extract.js image.png --json --output data.json
+# Section 2: Knowledge Base
+
+> 📚 Educational resources on domestic abuse dynamics for legal contexts
+
+### Overview
+
+Comprehensive documentation designed to help understand and articulate complex patterns of domestic abuse, coercive control, and legal abuse, particularly in family court and child custody proceedings.
+
+### Topics Covered
+
+| Document | Description |
+|----------|-------------|
+| **[coercive_control.md](knowledge_base/coercive_control.md)** | Understanding patterns of domination and control |
+| **[darvo.md](knowledge_base/darvo.md)** | Deny, Attack, Reverse Victim and Offender tactics |
+| **[economic_abuse.md](knowledge_base/economic_abuse.md)** | Financial control as a tool of abuse |
+| **[stalking_harassment.md](knowledge_base/stalking_harassment.md)** | Surveillance, monitoring, and unwanted contact |
+| **[legal_abuse_concealment.md](knowledge_base/legal_abuse_concealment.md)** | How courts can be weaponized |
+| **[communicating_to_judges.md](knowledge_base/communicating_to_judges.md)** | Frameworks for legal communication |
+| **[example_scenarios.md](knowledge_base/example_scenarios.md)** | Real-world pattern examples |
+| **[quick_reference.md](knowledge_base/quick_reference.md)** | Quick lookup guide |
+
+### Key Principles
+
+- Pattern recognition over isolated incidents
+- Power and control, not conflict
+- Trauma-informed understanding
+- Center children's safety
+- Believe patterns, not performances
+
+---
+
+# Section 3: Angular Web Application
+
+> 🌐 Web-based legal assistance interface
+
+### Overview
+
+An Angular-based web application providing tools for legal document management, case organization, and AI-assisted research.
+
+### Directory Structure
+
+```
+src/
+├── app.component.ts          # Main application component
+├── components/
+│   ├── chat-interface/       # AI chat functionality
+│   ├── exhibit-manager/      # Evidence organization
+│   ├── file-upload/          # Document upload handling
+│   ├── legal-document-generator/  # Document creation
+│   └── legal-research/       # Research tools
+├── models/
+│   └── case.model.ts         # Data models
+└── services/
+    ├── case.service.ts       # Case management
+    └── gemini.service.ts     # AI integration
 ```
 
-Output includes:
-- Extracted text
-- Confidence score
-- Word count
-- Line count
-- Processing timestamp
-
-### Batch Processing with Options
+### Running the Web App
 
 ```bash
-# Process with specific language
-node scripts/ocr-batch.js ./docs ./output --lang fra
+# Development server
+npm run dev
 
-# Process with JSON output
-node scripts/ocr-batch.js ./images ./output --json
+# Production build
+npm run build
 
-# Process specific file types
-node scripts/ocr-batch.js ./photos ./output --pattern "png,jpg"
+# Preview production build
+npm run preview
 ```
+
+---
+
+# Section 4: AI System Instructions
+
+> 🤖 Configuration for AI-powered assistance
+
+### Overview
+
+The `system_instructions.md` file contains comprehensive instructions for training an AI assistant to understand and articulate domestic abuse dynamics.
+
+### Core Knowledge Areas
+
+1. **Economic Abuse** - Financial control patterns
+2. **Stalking and Harassment** - Surveillance and monitoring
+3. **DARVO** - Victim-offender role reversal tactics
+4. **Coercive Control** - Systematic domination patterns
+5. **Legal Abuse** - Court system weaponization
+6. **Judicial Communication** - Effective framing for court
+
+### AI Training Approach
+
+- Pattern recognition over incidents
+- Trauma-informed understanding
+- Safety-first principles
+- Child-centered focus
+
+---
 
 ## 🤝 Contributing
 
@@ -190,12 +228,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Built with [Tesseract.js](https://tesseract.projectnaptha.com/)
-- OCR engine powered by [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+- OCR powered by [Tesseract.js](https://tesseract.projectnaptha.com/)
+- AI integration with [Google Generative AI](https://ai.google.dev/)
+- Built with [Angular](https://angular.io/)
 
 ## 📞 Support
 
-- 📖 Check the [documentation](START-HERE.md)
+- 📖 Check the relevant section documentation
 - 🐛 [Report bugs](https://github.com/Carlymarie992/gemini/issues)
 - 💡 [Request features](https://github.com/Carlymarie992/gemini/issues)
 - ❓ [Ask questions](https://github.com/Carlymarie992/gemini/issues)
