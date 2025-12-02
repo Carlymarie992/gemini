@@ -17,7 +17,7 @@ function testEngineCreation() {
   console.log('\n=== Test 1: OCR Engine Creation ===');
   
   try {
-    const engine = createOCREngine({ language: 'eng' });
+    createOCREngine({ language: 'eng' });
     console.log('✓ OCR Engine created successfully');
     return true;
   } catch (error) {
@@ -176,7 +176,7 @@ function testCleanTextValidation() {
     console.error('✗ Should have thrown error for conflicting options');
     return false;
   } catch (error) {
-    if (error.message.includes('Cannot use both')) {
+    if (error.message.includes('Cannot use multiple case conversion options')) {
       console.log('✓ Conflicting text case options correctly rejected');
       return true;
     } else {

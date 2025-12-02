@@ -8,8 +8,10 @@ const Tesseract = require('tesseract.js');
 class OCREngine {
   constructor(options = {}) {
     this.defaultLanguage = options.language || 'eng';
+    this.currentLanguage = null;
     this.worker = null;
     this.initialized = false;
+    this.logger = options.logger || null;
   }
 
   /**
@@ -21,9 +23,16 @@ class OCREngine {
       return;
     }
 
-    this.worker = await Tesseract.createWorker(this.defaultLanguage);
+    // Correct v6.x API: createWorker() with no parameters
+    this.worker = await Tesseract.createWorker();
+    await this.worker.loadLanguage(this.defaultLanguage);
+    await this.worker.initialize(this.defaultLanguage);
+    this.currentLanguage = this.defaultLanguage;
     this.initialized = true;
-    console.log('OCR Engine initialized successfully');
+    
+    if (this.logger) {
+      this.logger('OCR Engine initialized successfully');
+    }
   }
 
   /**
@@ -40,9 +49,10 @@ class OCREngine {
     const language = options.language || this.defaultLanguage;
     
     // Set language if different from current
-    if (language !== this.defaultLanguage) {
+    if (language !== this.currentLanguage) {
       await this.worker.loadLanguage(language);
       await this.worker.initialize(language);
+      this.currentLanguage = language;
     }
 
     const result = await this.worker.recognize(imagePath);
@@ -76,9 +86,10 @@ class OCREngine {
     } = options;
 
     // Set language if different from current
-    if (language !== this.defaultLanguage) {
+    if (language !== this.currentLanguage) {
       await this.worker.loadLanguage(language);
       await this.worker.initialize(language);
+      this.currentLanguage = language;
     }
 
     // Configure worker parameters
@@ -127,18 +138,24 @@ class OCREngine {
    * @returns {Promise<Array<Object>>} Array of recognition results
    */
   async extractTextBatch(imagePaths, options = {}) {
+    if (!Array.isArray(imagePaths)) {
+      throw new TypeError('extractTextBatch: "imagePaths" must be an array of image paths.');
+    }
+
     if (!this.initialized) {
       await this.initialize();
     }
 
-    const results = [];
-    for (const imagePath of imagePaths) {
-      const result = await this.extractText(imagePath, options);
-      results.push({
-        imagePath,
-        ...result
-      });
-    }
+    // Process images concurrently using Promise.all for better performance
+    const results = await Promise.all(
+      imagePaths.map(async (imagePath) => {
+        const result = await this.extractText(imagePath, options);
+        return {
+          imagePath,
+          ...result
+        };
+      })
+    );
 
     return results;
   }
@@ -173,10 +190,13 @@ class OCREngine {
    * @returns {Promise<Object>} Structured data
    */
   async extractStructuredData(imagePath, options = {}) {
-    const result = await this.extractTextAdvanced(imagePath, {
+    // Respect user's page segmentation mode if provided, otherwise default to 6
+    const mergedOptions = {
       ...options,
-      tessedit_pageseg_mode: 6 // Assume a single uniform block of text
-    });
+      ...(options.tessedit_pageseg_mode === undefined ? { tessedit_pageseg_mode: 6 } : {})
+    };
+    
+    const result = await this.extractTextAdvanced(imagePath, mergedOptions);
 
     // Group words into structured format
     const structuredData = {
@@ -200,7 +220,11 @@ class OCREngine {
     if (this.worker && this.initialized) {
       await this.worker.terminate();
       this.initialized = false;
-      console.log('OCR Engine terminated');
+      this.currentLanguage = null;
+      
+      if (this.logger) {
+        this.logger('OCR Engine terminated');
+      }
     }
   }
 }

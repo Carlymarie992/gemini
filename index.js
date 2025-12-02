@@ -44,7 +44,14 @@ async function quickOCR(imagePath, options = {}) {
     await engine.terminate();
     return result;
   } catch (error) {
-    await engine.terminate();
+    // Safely terminate only if worker exists
+    try {
+      if (engine.worker) {
+        await engine.terminate();
+      }
+    } catch (terminateError) {
+      // Ignore termination errors in cleanup
+    }
     throw error;
   }
 }
@@ -70,7 +77,14 @@ async function advancedOCR(imagePath, options = {}) {
     await engine.terminate();
     return result;
   } catch (error) {
-    await engine.terminate();
+    // Safely terminate only if worker exists
+    try {
+      if (engine.worker) {
+        await engine.terminate();
+      }
+    } catch (terminateError) {
+      // Ignore termination errors in cleanup
+    }
     throw error;
   }
 }
@@ -90,7 +104,14 @@ async function batchOCR(imagePaths, options = {}) {
     await engine.terminate();
     return results;
   } catch (error) {
-    await engine.terminate();
+    // Safely terminate only if worker exists
+    try {
+      if (engine.worker) {
+        await engine.terminate();
+      }
+    } catch (terminateError) {
+      // Ignore termination errors in cleanup
+    }
     throw error;
   }
 }

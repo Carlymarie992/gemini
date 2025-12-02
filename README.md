@@ -35,7 +35,10 @@ This will show:
 ## Quick Start
 
 ```javascript
-const { quickOCR } = require('./index');
+// For installed package usage:
+const { quickOCR } = require('gemini');
+// For local development (if running from source):
+// const { quickOCR } = require('./index');
 
 async function extractText() {
   const result = await quickOCR('./path/to/image.jpg');

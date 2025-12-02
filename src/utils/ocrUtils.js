@@ -174,9 +174,13 @@ function groupWordsIntoLines(words, threshold = 10) {
 function cleanText(text, options = {}) {
   let cleaned = text;
 
-  // Validate conflicting options
-  if (options.toLowerCase && options.toUpperCase) {
-    throw new Error('Cannot use both toLowerCase and toUpperCase options simultaneously');
+  // Validate conflicting case conversion options
+  const caseOptions = ['toLowerCase', 'toUpperCase'];
+  const enabledCaseOptions = caseOptions.filter(opt => options[opt]);
+  if (enabledCaseOptions.length > 1) {
+    throw new Error(
+      `Cannot use multiple case conversion options simultaneously: ${enabledCaseOptions.join(', ')}`
+    );
   }
 
   // Remove extra whitespace
@@ -184,9 +188,10 @@ function cleanText(text, options = {}) {
     cleaned = cleaned.replace(/\s+/g, ' ').trim();
   }
 
-  // Remove special characters
+  // Remove special characters (Unicode-aware for multi-language support)
   if (options.removeSpecialChars) {
-    cleaned = cleaned.replace(/[^\w\s.,!?-]/g, '');
+    // Use Unicode property escapes to handle all scripts properly
+    cleaned = cleaned.replace(/[^\p{L}\p{N}\s.,!?-]/gu, '');
   }
 
   // Convert to lowercase
