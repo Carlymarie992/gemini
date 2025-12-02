@@ -6,7 +6,6 @@
  */
 
 const { 
-  OCREngine, 
   createOCREngine,
   OCR_CONFIG,
   getLanguageCode,
