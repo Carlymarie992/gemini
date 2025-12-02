@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AntigravityService } from '../../services/antigravity.service';
@@ -177,7 +177,7 @@ import { CaseService } from '../../services/case.service';
     </div>
   `,
 })
-export class AntigravityMotionComponent {
+export class AntigravityMotionComponent implements OnInit {
   antigravityService = inject(AntigravityService);
   securityService = inject(SecurityService);
   caseService = inject(CaseService);

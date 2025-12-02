@@ -641,7 +641,16 @@ export class GeminiService {
     this.loading.set(true);
     this.error.set(null);
     try {
-      const sendParams: any = {
+      interface SendMessageParams {
+        message: string;
+        config?: {
+          thinkingConfig?: {
+            thinkingBudget: number;
+          };
+        };
+      }
+
+      const sendParams: SendMessageParams = {
         message: message,
       };
 
@@ -665,7 +674,16 @@ export class GeminiService {
     this.loading.set(true);
     this.error.set(null);
     try {
-      const sendParams: any = {
+      interface SendMessageParams {
+        message: string;
+        config?: {
+          thinkingConfig?: {
+            thinkingBudget: number;
+          };
+        };
+      }
+
+      const sendParams: SendMessageParams = {
         message: message,
       };
 
