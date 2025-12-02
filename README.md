@@ -33,7 +33,13 @@
 - **Constitutional Auditor AI**: Specialized legal analysis persona
 - **Secure by Design**: Multiple layers of input validation and sanitization
 
-📖 **[Complete Project Antigravity Documentation](docs/PROJECT_ANTIGRAVITY.md)**
+### Complete Documentation Suite
+
+📚 **Essential Reading**:
+- 📖 **[Project Antigravity Guide](docs/PROJECT_ANTIGRAVITY.md)** - Complete usage and legal framework
+- 🛡️ **[Security Implementation Guide](docs/SECURITY_GUIDE.md)** - Comprehensive security documentation
+- ✅ **[Security Checklist](docs/SECURITY_CHECKLIST.md)** - Implementation status and best practices
+- 💼 **[Usage Examples](docs/USAGE_EXAMPLES.md)** - Real-world scenarios and step-by-step guides
 
 ## 📋 Table of Contents
 
