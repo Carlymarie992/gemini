@@ -32,7 +32,6 @@ function createTable(headers, rows) {
   });
 
   const separator = '─';
-  const corner = '┼';
   
   let table = '\n';
   
@@ -109,18 +108,20 @@ function createSpinner(message) {
 /**
  * Prompt for user confirmation
  */
-function confirm(message) {
-  return new Promise((resolve) => {
-    const readline = require('readline').createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
-    
-    readline.question(`${message} (y/n): `, (answer) => {
-      readline.close();
-      resolve(answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes');
-    });
+async function confirm(message) {
+  const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
   });
+  try {
+    return await new Promise((resolve) => {
+      readline.question(`${message} (y/n): `, (answer) => {
+        resolve(answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes');
+      });
+    });
+  } finally {
+    readline.close();
+  }
 }
 
 /**
