@@ -17,8 +17,13 @@ export class SecurityService {
   sanitizeInput(input: string): string {
     if (!input) return '';
     
-    // Remove script tags and their content - handles variations like <script >, < script>, etc.
-    let sanitized = input.replace(/<\s*script\b[^<]*(?:(?!<\s*\/\s*script\s*>)<[^<]*)*<\s*\/\s*script\s*>/gi, '');
+    // Remove script tags and their content (using DOMParser, safer than regex)
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(input, 'text/html');
+    // Remove all script elements
+    const scriptEls = doc.querySelectorAll('script');
+    scriptEls.forEach(el => el.parentNode?.removeChild(el));
+    let sanitized = doc.body.innerHTML;
     
     // Remove dangerous event handlers - multiple passes to catch nested patterns
     for (let i = 0; i < 3; i++) {
