@@ -36,7 +36,12 @@ export class SecurityService {
     sanitized = sanitized.replace(/vbscript\s*:/gi, '');
     
     // Remove iframe tags - handles variations
-    sanitized = sanitized.replace(/<\s*iframe\b[^<]*(?:(?!<\s*\/\s*iframe\s*>)<[^<]*)*<\s*\/\s*iframe\s*>/gi, '');
+    // Remove all <iframe> tags, even nested or overlapping, by repeatedly applying the regex
+    let previousSanitized;
+    do {
+      previousSanitized = sanitized;
+      sanitized = sanitized.replace(/<\s*iframe\b[^<]*(?:(?!<\s*\/\s*iframe\s*>)<[^<]*)*<\s*\/\s*iframe\s*>/gi, '');
+    } while (sanitized !== previousSanitized);
     
     // Remove object and embed tags
     sanitized = sanitized.replace(/<\s*(object|embed)\b[^<]*(?:(?!<\s*\/\s*\1\s*>)<[^<]*)*<\s*\/\s*\1\s*>/gi, '');
