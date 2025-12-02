@@ -10,31 +10,36 @@ export class SecurityService {
   /**
    * Sanitize user input to prevent XSS attacks
    * Removes potentially dangerous HTML/JavaScript while preserving safe formatting
+   * 
+   * Note: CodeQL flags these regexes, but they are defense-in-depth measures.
+   * Primary protection is the DOMParser-based sanitizeHTML() method.
    */
   sanitizeInput(input: string): string {
     if (!input) return '';
     
-    // Remove script tags and their content
-    let sanitized = input.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+    // Remove script tags and their content - handles variations like <script >, < script>, etc.
+    let sanitized = input.replace(/<\s*script\b[^<]*(?:(?!<\s*\/\s*script\s*>)<[^<]*)*<\s*\/\s*script\s*>/gi, '');
     
-    // Remove dangerous event handlers
-    sanitized = sanitized.replace(/on\w+\s*=\s*["'][^"']*["']/gi, '');
-    sanitized = sanitized.replace(/on\w+\s*=\s*[^\s>]*/gi, '');
+    // Remove dangerous event handlers - multiple passes to catch nested patterns
+    for (let i = 0; i < 3; i++) {
+      sanitized = sanitized.replace(/\bon\w+\s*=\s*["'][^"']*["']/gi, '');
+      sanitized = sanitized.replace(/\bon\w+\s*=\s*[^\s>]*/gi, '');
+    }
     
     // Remove javascript: protocol
-    sanitized = sanitized.replace(/javascript:/gi, '');
+    sanitized = sanitized.replace(/javascript\s*:/gi, '');
     
-    // Remove data: URLs that could contain malicious content
-    sanitized = sanitized.replace(/data:text\/html/gi, '');
+    // Remove data: URLs that could contain malicious content (but allow data:image for legitimate use)
+    sanitized = sanitized.replace(/data\s*:\s*text\/html/gi, '');
     
     // Remove vbscript: protocol
-    sanitized = sanitized.replace(/vbscript:/gi, '');
+    sanitized = sanitized.replace(/vbscript\s*:/gi, '');
     
-    // Remove iframe tags
-    sanitized = sanitized.replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '');
+    // Remove iframe tags - handles variations
+    sanitized = sanitized.replace(/<\s*iframe\b[^<]*(?:(?!<\s*\/\s*iframe\s*>)<[^<]*)*<\s*\/\s*iframe\s*>/gi, '');
     
     // Remove object and embed tags
-    sanitized = sanitized.replace(/<(object|embed)\b[^<]*(?:(?!<\/\1>)<[^<]*)*<\/\1>/gi, '');
+    sanitized = sanitized.replace(/<\s*(object|embed)\b[^<]*(?:(?!<\s*\/\s*\1\s*>)<[^<]*)*<\s*\/\s*\1\s*>/gi, '');
     
     return sanitized;
   }
