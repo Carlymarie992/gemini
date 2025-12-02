@@ -641,15 +641,15 @@ export class GeminiService {
     this.loading.set(true);
     this.error.set(null);
     try {
-      const contentParams: GenerateContentParameters = {
-        contents: [{ parts: [{ text: message }] }], // Ensure contents is always an array of parts
+      const sendParams: any = {
+        message: message,
       };
 
       if (messageConfig?.thinkingBudget !== undefined) {
-        contentParams.config = { thinkingConfig: { thinkingBudget: messageConfig.thinkingBudget } };
+        sendParams.config = { thinkingConfig: { thinkingBudget: messageConfig.thinkingBudget } };
       }
 
-      const response: GenerateContentResponse = await chat.sendMessage(contentParams);
+      const response: GenerateContentResponse = await chat.sendMessage(sendParams);
       return response.text;
     } catch (error) {
       this.handleError(error, 'Failed to send chat message');
@@ -665,15 +665,15 @@ export class GeminiService {
     this.loading.set(true);
     this.error.set(null);
     try {
-      const contentParams: GenerateContentParameters = {
-        contents: [{ parts: [{ text: message }] }],
+      const sendParams: any = {
+        message: message,
       };
 
       if (messageConfig?.thinkingBudget !== undefined) {
-        contentParams.config = { thinkingConfig: { thinkingBudget: messageConfig.thinkingBudget } };
+        sendParams.config = { thinkingConfig: { thinkingBudget: messageConfig.thinkingBudget } };
       }
 
-      const response = await chat.sendMessageStream(contentParams);
+      const response = await chat.sendMessageStream(sendParams);
       const textStream = (async function* () {
         for await (const chunk of response) {
           if (chunk.text) {

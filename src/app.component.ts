@@ -6,6 +6,7 @@ import { ExhibitManagerComponent } from './components/exhibit-manager/exhibit-ma
 import { LegalResearchComponent } from './components/legal-research/legal-research.component';
 import { LegalDocumentGeneratorComponent } from './components/legal-document-generator/legal-document-generator.component';
 import { ChatInterfaceComponent } from './components/chat-interface/chat-interface.component';
+import { AntigravityMotionComponent } from './components/antigravity-motion/antigravity-motion.component';
 import { CaseService } from './services/case.service';
 import { FormsModule } from '@angular/forms'; // Required for ngModel in case details
 // Fix: Import CaseDetails for type safety in updateCaseDetail method.
@@ -21,6 +22,7 @@ import { CaseDetails } from './models/case.model';
     LegalResearchComponent,
     LegalDocumentGeneratorComponent,
     ChatInterfaceComponent,
+    AntigravityMotionComponent,
   ],
   selector: 'app-root',
   template: `
@@ -103,6 +105,7 @@ import { CaseDetails } from './models/case.model';
       </div>
 
       <app-file-upload></app-file-upload>
+      <app-antigravity-motion></app-antigravity-motion>
       <app-exhibit-manager></app-exhibit-manager>
       <app-legal-research class="w-full lg:w-1/2"></app-legal-research>
       <app-legal-document-generator></app-legal-document-generator>

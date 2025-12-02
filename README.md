@@ -4,10 +4,36 @@
 
 # Gemini - Legal AI Assistant & OCR Tools
 
-> A comprehensive platform combining AI-powered legal assistance, domestic abuse education, and OCR tools
+> A comprehensive platform combining AI-powered legal assistance, domestic abuse education, OCR tools, and specialized Rule 60(b) motion generation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen.svg)](https://nodejs.org/)
+[![Security](https://img.shields.io/badge/security-enhanced-blue.svg)](docs/SECURITY_GUIDE.md)
+
+## 🔒 Security Notice
+
+**Angular XSS Vulnerability**: This application uses Angular 20.3.x which has a high-severity XSS vulnerability (GHSA-v4hv-rgfq-gp49). We have implemented additional security layers including:
+- Comprehensive input sanitization
+- XSS protection via SecurityService
+- Prompt injection detection
+- Sensitive data redaction
+
+**Update to Angular 20.3.15+ when available.** See [docs/SECURITY_GUIDE.md](docs/SECURITY_GUIDE.md) for details.
+
+## 🚨 Project Antigravity: Advanced Legal Assistance
+
+**NEW**: Specialized AI assistance for time-barred litigation in North Dakota's East Central Judicial District.
+
+### Key Features
+
+- **Rule 60(b)(6) Motions**: Extraordinary circumstances analysis (Kinsella v. Kinsella)
+- **Rule 60(b)(4) Motions**: Void judgment arguments (Ghost Address defects)
+- **Coercive Control Analysis**: N.D.C.C. § 14-07.1 compliance
+- **Independent Actions**: Fraud on the court complaints
+- **Constitutional Auditor AI**: Specialized legal analysis persona
+- **Secure by Design**: Multiple layers of input validation and sanitization
+
+📖 **[Complete Project Antigravity Documentation](docs/PROJECT_ANTIGRAVITY.md)**
 
 ## 📋 Table of Contents
 
@@ -24,7 +50,7 @@
 
 ## 📂 Repository Sections
 
-This repository is organized into **four main sections**, all under the same branch:
+This repository is organized into **five main sections**, all under the same branch:
 
 | Section | Directory | Description |
 |---------|-----------|-------------|
@@ -32,6 +58,7 @@ This repository is organized into **four main sections**, all under the same bra
 | 📚 **Knowledge Base** | `knowledge_base/` | Educational resources on domestic abuse dynamics |
 | 🌐 **Web Application** | `src/` | Angular-based legal assistance web app |
 | 🤖 **AI Instructions** | `system_instructions.md` | AI system configuration and training |
+| ⚖️ **Project Antigravity** | `src/services/antigravity.service.ts`, `docs/PROJECT_ANTIGRAVITY.md` | Specialized Rule 60(b) motion generation |
 
 ---
 
