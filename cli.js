@@ -12,7 +12,6 @@ const {
   printSuccess,
   printError,
   printInfo,
-  printWarning,
   createTable,
   formatOutput
 } = require('./src/utils/helpers');
