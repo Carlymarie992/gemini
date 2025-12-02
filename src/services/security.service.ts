@@ -47,11 +47,13 @@ export class SecurityService {
     if (!html) return '';
     
     const allowedTags = ['p', 'br', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'blockquote'];
-    const div = document.createElement('div');
-    div.innerHTML = html;
+    
+    // Use DOMParser for safer HTML parsing
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
     
     // Remove all non-allowed tags
-    const elements = div.getElementsByTagName('*');
+    const elements = doc.body.getElementsByTagName('*');
     for (let i = elements.length - 1; i >= 0; i--) {
       const element = elements[i];
       if (!allowedTags.includes(element.tagName.toLowerCase())) {
@@ -67,7 +69,7 @@ export class SecurityService {
       }
     }
     
-    return this.sanitizeInput(div.innerHTML);
+    return this.sanitizeInput(doc.body.innerHTML);
   }
 
   /**
@@ -158,17 +160,15 @@ export class SecurityService {
     
     const redacted: any = Array.isArray(obj) ? [] : {};
     
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        const lowerKey = key.toLowerCase();
-        
-        if (sensitiveKeys.some(sk => lowerKey.includes(sk))) {
-          redacted[key] = '[REDACTED]';
-        } else if (typeof obj[key] === 'object' && obj[key] !== null) {
-          redacted[key] = this.redactObjectSensitiveData(obj[key]);
-        } else {
-          redacted[key] = obj[key];
-        }
+    for (const [key, value] of Object.entries(obj)) {
+      const lowerKey = key.toLowerCase();
+      
+      if (sensitiveKeys.some(sk => lowerKey.includes(sk))) {
+        redacted[key] = '[REDACTED]';
+      } else if (typeof value === 'object' && value !== null) {
+        redacted[key] = this.redactObjectSensitiveData(value);
+      } else {
+        redacted[key] = value;
       }
     }
     
