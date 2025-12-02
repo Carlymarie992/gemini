@@ -49,6 +49,9 @@ class OCRScanner {
       return this.formatResult(result, outputFormat, includeConfidence);
     } catch (error) {
       throw new Error(`OCR scan failed: ${error.message}`);
+    } finally {
+      // Ensure the progress line is always cleared
+      process.stdout.write('\n');
     }
   }
 
