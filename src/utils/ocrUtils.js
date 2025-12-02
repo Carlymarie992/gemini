@@ -165,6 +165,9 @@ function groupWordsIntoLines(words, threshold = 10) {
   return lines;
 }
 
+// Constants for validation
+const CASE_CONVERSION_OPTIONS = ['toLowerCase', 'toUpperCase'];
+
 /**
  * Clean extracted text
  * @param {string} text - Raw text
@@ -175,8 +178,7 @@ function cleanText(text, options = {}) {
   let cleaned = text;
 
   // Validate conflicting case conversion options
-  const caseOptions = ['toLowerCase', 'toUpperCase'];
-  const enabledCaseOptions = caseOptions.filter(opt => options[opt]);
+  const enabledCaseOptions = CASE_CONVERSION_OPTIONS.filter(opt => options[opt]);
   if (enabledCaseOptions.length > 1) {
     throw new Error(
       `Cannot use multiple case conversion options simultaneously: ${enabledCaseOptions.join(', ')}`

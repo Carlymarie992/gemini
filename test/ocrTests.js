@@ -17,6 +17,7 @@ function testEngineCreation() {
   console.log('\n=== Test 1: OCR Engine Creation ===');
   
   try {
+    // Create engine to verify no errors are thrown during instantiation
     createOCREngine({ language: 'eng' });
     console.log('✓ OCR Engine created successfully');
     return true;

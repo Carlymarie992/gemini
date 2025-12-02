@@ -190,10 +190,10 @@ class OCREngine {
    * @returns {Promise<Object>} Structured data
    */
   async extractStructuredData(imagePath, options = {}) {
-    // Respect user's page segmentation mode if provided, otherwise default to 6
+    // Default to page segmentation mode 6, but allow user override
     const mergedOptions = {
-      ...options,
-      ...(options.tessedit_pageseg_mode === undefined ? { tessedit_pageseg_mode: 6 } : {})
+      tessedit_pageseg_mode: 6,
+      ...options
     };
     
     const result = await this.extractTextAdvanced(imagePath, mergedOptions);
