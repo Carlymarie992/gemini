@@ -60,7 +60,6 @@ class OCRScanner {
    */
   async scanBatch(imagePaths, options = {}) {
     const results = [];
-    const errors = [];
 
     console.log(`Starting batch OCR scan of ${imagePaths.length} files...`);
 
@@ -76,10 +75,6 @@ class OCRScanner {
           data: result
         });
       } catch (error) {
-        errors.push({
-          file: imagePath,
-          error: error.message
-        });
         results.push({
           file: imagePath,
           success: false,
@@ -88,11 +83,11 @@ class OCRScanner {
       }
     }
 
-    console.log(`\n✓ Batch scan completed: ${results.filter(r => r.success).length} successful, ${errors.length} failed`);
+    const failedCount = results.filter(r => !r.success).length;
+    console.log(`\n✓ Batch scan completed: ${results.filter(r => r.success).length} successful, ${failedCount} failed`);
 
     return {
       results,
-      errors,
       summary: this.generateBatchSummary(results)
     };
   }
