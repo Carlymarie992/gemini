@@ -12,13 +12,20 @@
 
 ## 🔒 Security Notice
 
-**Angular XSS Vulnerability**: This application uses Angular 20.3.x which has a high-severity XSS vulnerability (GHSA-v4hv-rgfq-gp49). We have implemented additional security layers including:
-- Comprehensive input sanitization
-- XSS protection via SecurityService
-- Prompt injection detection
-- Sensitive data redaction
+**Security Status**: ✅ **All vulnerabilities resolved!**
 
-**Update to Angular 20.3.15+ when available.** See [docs/SECURITY_GUIDE.md](docs/SECURITY_GUIDE.md) for details.
+This application has migrated from Angular CLI build system to **Vite** with the Analog.js plugin. The Angular compiler is now only used during development/build time (as a dev dependency), resolving the previous XSS vulnerability (GHSA-v4hv-rgfq-gp49).
+
+**Current Security Measures**:
+- ✅ Zero npm audit vulnerabilities
+- ✅ Angular compiler (20.3.15+) isolated to dev dependencies
+- ✅ Vite build system for production builds
+- ✅ Comprehensive input sanitization
+- ✅ XSS protection via SecurityService
+- ✅ Prompt injection detection
+- ✅ Sensitive data redaction
+
+See [docs/SECURITY_GUIDE.md](docs/SECURITY_GUIDE.md) for detailed security documentation.
 
 ## 🚨 Project Antigravity: Advanced Legal Assistance
 
@@ -180,11 +187,18 @@ Comprehensive documentation designed to help understand and articulate complex p
 
 # Section 3: Angular Web Application
 
-> 🌐 Web-based legal assistance interface
+> 🌐 Web-based legal assistance interface built with Angular and Vite
 
 ### Overview
 
-An Angular-based web application providing tools for legal document management, case organization, and AI-assisted research.
+An Angular-based web application providing tools for legal document management, case organization, and AI-assisted research. Built using **Vite** for fast development and optimized production builds.
+
+### Technology Stack
+
+- **Framework**: Angular 20.3.x
+- **Build Tool**: Vite 6.x with @analogjs/vite-plugin-angular
+- **Language**: TypeScript 5.9.x
+- **Styling**: Tailwind CSS
 
 ### Directory Structure
 
@@ -263,7 +277,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - OCR powered by [Tesseract.js](https://tesseract.projectnaptha.com/)
 - AI integration with [Google Generative AI](https://ai.google.dev/)
-- Built with [Angular](https://angular.io/)
+- Built with [Angular](https://angular.io/) and [Vite](https://vite.dev/)
+- Angular integration via [Analog.js](https://analogjs.org/)
 
 ## 📞 Support
 
