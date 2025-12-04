@@ -27,48 +27,48 @@ Pattern of repeated, unwanted attention and contact that causes fear. Includes p
 ## Pattern Recognition Checklist
 
 ### Coercive Control - Look For:
-- ☐ Isolation from friends, family, support
-- ☐ Economic control and dependency
-- ☐ Regulation of daily activities
-- ☐ Constant monitoring and surveillance
-- ☐ Degradation and humiliation
-- ☐ Threats (explicit or implicit)
-- ☐ Demonstrating omnipotence
-- ☐ Occasional indulgences (intermittent kindness)
+ ☐ Isolation from friends, family, support
+ ☐ Economic control and dependency
+ ☐ Regulation of daily activities
+ ☐ Constant monitoring and surveillance
+ ☐ Degradation and humiliation
+ ☐ Threats (explicit or implicit)
+ ☐ Demonstrating omnipotence
+ ☐ Occasional indulgences (intermittent kindness)
 
 ### DARVO - Look For:
-- ☐ **Deny**: "That never happened" / "You're exaggerating"
-- ☐ **Attack**: "You're crazy" / "You're vindictive" / "You're unstable"
-- ☐ **Reverse**: "I'm the real victim" / Counter-allegations
-- ☐ Strategic timing (counter-allegations only after victim seeks protection)
-- ☐ Projection (accusing victim of abuser's own behavior)
+ ☐ **Deny**: "That never happened" / "You're exaggerating"
+ ☐ **Attack**: "You're crazy" / "You're vindictive" / "You're unstable"
+ ☐ **Reverse**: "I'm the real victim" / Counter-allegations
+ ☐ Strategic timing (counter-allegations only after victim seeks protection)
+ ☐ Projection (accusing victim of abuser's own behavior)
 
 ### Economic Abuse - Look For:
-- ☐ Control of all financial resources during relationship
-- ☐ Preventing or sabotaging employment
-- ☐ Running up debt in victim's name
-- ☐ Hiding income/assets during support calculations
-- ☐ Strategic unemployment or underemployment
-- ☐ Litigation tactics that drain victim's resources
-- ☐ Significant disparity in legal representation
+ ☐ Control of all financial resources during relationship
+ ☐ Preventing or sabotaging employment
+ ☐ Running up debt in victim's name
+ ☐ Hiding income/assets during support calculations
+ ☐ Strategic unemployment or underemployment
+ ☐ Litigation tactics that drain victim's resources
+ ☐ Significant disparity in legal representation
 
 ### Legal Abuse - Look For:
-- ☐ Excessive motions and court filings
-- ☐ Frequent lawyer changes causing delays
-- ☐ Abusive discovery requests
-- ☐ False allegations and counter-reports
-- ☐ Refusing reasonable settlement offers
-- ☐ Violations of orders without consequences
-- ☐ Subpoenaing victim's support network
+ ☐ Excessive motions and court filings
+ ☐ Frequent lawyer changes causing delays
+ ☐ Abusive discovery requests
+ ☐ False allegations and counter-reports
+ ☐ Refusing reasonable settlement offers
+ ☐ Violations of orders without consequences
+ ☐ Subpoenaing victim's support network
 
 ### Stalking - Look For:
-- ☐ Following or surveillance
-- ☐ Showing up uninvited at locations
-- ☐ Excessive calls, texts, emails
-- ☐ Monitoring through technology (GPS, spyware)
-- ☐ Using legal proceedings to maintain contact
-- ☐ Gathering information through third parties
-- ☐ Escalation since separation
+ ☐ Following or surveillance
+ ☐ Showing up uninvited at locations
+ ☐ Excessive calls, texts, emails
+ ☐ Monitoring through technology (GPS, spyware)
+ ☐ Using legal proceedings to maintain contact
+ ☐ Gathering information through third parties
+ ☐ Escalation since separation
 
 ---
 
