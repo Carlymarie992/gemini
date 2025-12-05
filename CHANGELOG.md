@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-11-26
 
+### Security
+- **CRITICAL**: Fixed Angular Stored XSS vulnerability (GHSA-v4hv-rgfq-gp49)
+  - Updated Angular compiler and core packages to 20.3.15
+  - Patched incomplete security schema that allowed XSS attacks via SVG, MathML, and animation attributes
+  - See [docs/XSS_VULNERABILITY_FIX.md](docs/XSS_VULNERABILITY_FIX.md) for details
+- Added comprehensive security tests in `security.service.spec.ts`
+- Enhanced SECURITY.md with vulnerability fix documentation
+- npm audit reports 0 vulnerabilities after fix
+
 ### Added
 
 #### OCR Core Features
@@ -54,6 +63,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved error handling across all scripts
 
 ### Security
+- **CRITICAL**: Fixed Angular Stored XSS vulnerability (GHSA-v4hv-rgfq-gp49)
+  - Updated Angular compiler and core packages to 20.3.15
+  - Patched incomplete security schema that allowed XSS attacks via SVG, MathML, and animation attributes
+  - See [docs/XSS_VULNERABILITY_FIX.md](docs/XSS_VULNERABILITY_FIX.md) for details
+- Added comprehensive security tests in `security.service.spec.ts`
+- Enhanced SECURITY.md with vulnerability fix documentation
+- npm audit reports 0 vulnerabilities after fix
 - Added .env.example to guide secure configuration
 - Enhanced .gitignore to exclude sensitive files
 - Added SECURITY.md with vulnerability reporting guidelines
