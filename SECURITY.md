@@ -54,7 +54,7 @@ When using this project:
 
 ### Angular XSS Vulnerability (GHSA-v4hv-rgfq-gp49) - Fixed in v1.0.0
 
-**Fixed Date**: December 2025
+**Fixed Date**: December 2024
 
 **Vulnerability**: Angular Template Compiler Stored Cross-Site Scripting (XSS) vulnerability
 
