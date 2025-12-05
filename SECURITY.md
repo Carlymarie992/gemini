@@ -50,6 +50,30 @@ When using this project:
 4. **File Permissions**: Ensure output directories have appropriate permissions
 5. **.env Files**: Always use `.env.local` or `.env` (gitignored) for sensitive configuration
 
+## Recent Security Fixes
+
+### Angular XSS Vulnerability (GHSA-v4hv-rgfq-gp49) - Fixed in v1.0.0
+
+**Fixed Date**: December 2025
+
+**Vulnerability**: Angular Template Compiler Stored Cross-Site Scripting (XSS) vulnerability
+
+**Description**: The Angular compiler's internal security schema was incomplete, allowing attackers to bypass Angular's built-in security sanitization for certain URL-holding attributes (SVG xlink:href, MathML href attributes) and SVG animation elements' attributeName attribute.
+
+**Impact**: When exploited, this vulnerability allowed attackers to execute arbitrary JavaScript code within the application context, potentially leading to:
+- Session hijacking
+- Data exfiltration
+- Unauthorized actions
+
+**Resolution**: Updated all Angular packages to version 20.3.15, which includes the security fix that properly validates and sanitizes:
+- SVG-related attributes (e.g., xlink:href)
+- MathML attributes (e.g., math|href, annotation|href)
+- SVG animation elements' attributeName attribute
+
+**Affected Versions**: Angular 20.0.0 - 20.3.14
+
+**Fixed Versions**: Angular 20.3.15+
+
 ## Known Security Considerations
 
 - This tool processes user-provided images and PDFs. Always validate and sanitize file inputs
